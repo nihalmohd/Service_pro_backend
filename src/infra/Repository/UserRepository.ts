@@ -11,7 +11,7 @@ export const createUserRepository = async (connectionConfig: sql.config): Promis
     try {
       await request.query(`
         INSERT INTO YourTable (Name, PhoneNumber, PasswordHash, Confirmation)
-        VALUES (@username, @phoneNumber, @password, @confirmPassword);
+        VALUES (${username as String,phoneNumber as String, password as String, confirmPassword as String});
       `, (err) => {
         if (err) {
           throw err; 
